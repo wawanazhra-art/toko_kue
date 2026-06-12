@@ -79,7 +79,7 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success','barang berhasil diupdate');
     }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
