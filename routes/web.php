@@ -10,8 +10,8 @@ Route::post('/login',[AuthController::class,'login'])->name('login.process');
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
 
-
 //protect halaman products supaya tidak bisa diakses tanpa login
 Route::middleware('auth')->group(function(){
-Route::resource('products',ProductController::class);
+    Route::get('/products/download-pdf',[ProductController::class,'downloadPdf'])->name('products.pdf');
+    Route::resource('products',ProductController::class);
 });
